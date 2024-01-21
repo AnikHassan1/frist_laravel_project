@@ -5,6 +5,9 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CategoryController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\subcategoryController;
+use App\Http\Controllers\Admin\postController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,6 +39,29 @@ Route::post('/Category/store',[CategoryController::class,'store'])->name('Catego
 Route::get('/Category/edit/{id}',[CategoryController::class,'edit'])->name('Category.edit');
 Route::post('/Category/update/{id}',[CategoryController::class,'update'])->name('Category.update');
 Route::get('/Category/delete/{id}',[CategoryController::class,'destoy'])->name('Category.delete');
+
+//__sub Category Crud Oparetion__//
+Route::get('/subcategory/create',[subcategoryController::class,'create'])->name('subcategory.create');
+Route::post('/subcategory/store',[subcategoryController::class,'store'])->name('subcategory.store');
+Route::get('/subcategory/index',[subcategoryController::class,'index'])->name('subcategory.index');
+Route::get('/subCategory/delete/{id}',[subcategoryController::class,'destoy'])->name('subCategory.delete');
+Route::get('/subCategory/edit/{id}',[subcategoryController::class,'edit'])->name('subCategory.edit');
+Route::post('/subcategory/update/{id}',[subcategoryController::class,'update'])->name('subcategory.update');
+
+//__Create Post__//
+Route::get('/post/create',[postController::class,'create'])->name('post.create');
+Route::post('/post/store',[postController::class,'store'])->name('post.store');
+
+
+
+
+
+
+
+
+
+
+
 //__EmailVerify__//
 Auth::routes(['verify' => true]);
 

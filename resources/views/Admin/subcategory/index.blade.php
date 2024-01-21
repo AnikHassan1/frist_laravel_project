@@ -1,48 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<!-- <div class="container my-4">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Category list') }}
-                    <a href="{{route('category.create')}}" class="btn btn-sm btn-primary" style="float:right;">ADD Category</a>
-                </div>
-
-                <div class="card-body">
-
-                    <table class="table">
-                        <thead class="table table-primary">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>slug</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($ctd as $key=>$data)
-                            <tr>
-
-                                <td>{{++$key}}</td>
-                                <td>{{$data->Category_name}}</td>
-                                <td>{{$data->Category_slug}}</td>
-
-                                <td class="d-flex gap-2">
-                                    <a href="{{route('Category.edit',$data->id)}}" class="btn btn-primary">Edit</a>
-                                    <a href="{{route('Category.delete',$data->id)}}" class="btn btn-danger">Delete</a>
-                                </td>
-
-                            </tr>
-                            @endforeach
-                        </tbody>
-
-                    </table>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 <div class="wrapper">
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -55,7 +12,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{url('/')}}">Home</a></li>
-                            <li class="breadcrumb-item active">Category Tables</li>
+                            <li class="breadcrumb-item active"> Sub Category Tables</li>
                         </ol>
                     </div>
                 </div>
@@ -63,13 +20,13 @@
         </section>
 
         <!-- Main content -->
-        <section class="content">
+   <section class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">All Category</h3>
+                                <h3 class="card-title">All Sub Category</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -90,21 +47,23 @@
                                                 <thead>
                                                     <tr>
                                                         <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
-                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Name</th>
+                                                        <th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Category Name</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Sub Category Name</th>
                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Slug</th>
                                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($ctd as $key=>$data)
+                                                    @foreach($users as $key=>$data)
                                                     <tr class="odd">
                                                         <td class="dtr-control sorting_1" tabindex="0">{{++$key}}</td>
-                                                        <td>{{$data->Category_name}}</td>
-                                                        <td>{{$data->Category_slug}}</td>
+                                                        <td>{{$data->category->Category_name}}</td>
+                                                        <td>{{$data->subcategory_name}}</td>
+                                                        <td>{{$data->subcategory_slug}}</td>
 
                                                         <td class="d-flex gap-5">
-                                                            <a href="{{route('Category.edit',$data->id)}}" class="btn btn-primary">Edit</a>
-                                                            <a href="javascript:void(0);" data-href="{{route('Category.delete',$data->id)}}', ['id' => $data->id]) }}" class="btn btn-danger delete">Delete</a>
+                                                            <a href="{{route('subCategory.edit',$data->id)}}" class="btn btn-primary">Edit</a>
+                                                            <a href="javascript:void(0);" data-href="{{route('subCategory.delete',$data->id)}}', ['id' => $data->id]) }}" class="btn btn-danger delete">Delete</a>
                                                         </td>
                                                     </tr>
                                                     @endforeach

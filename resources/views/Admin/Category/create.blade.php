@@ -1,11 +1,10 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Add Category') }}
-                <a href="{{route('Category.index')}}" class="btn btn-sm btn-primary" style="float:right;"> Category List</a>
                 </div>
             <div class="card-body">
 

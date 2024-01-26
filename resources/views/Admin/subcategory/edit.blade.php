@@ -16,7 +16,7 @@
                     @endif
                     <form action="{{route('subcategory.update',$data->id)}}" method="POST" class="mt-3">
                         @csrf
-                    
+                        
                         <div class="mb-3">
                             <label for="name" class="form-label">Choose Category </label>
                             <select name="category_id" class="form-control">

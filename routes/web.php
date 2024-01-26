@@ -48,12 +48,14 @@ Route::get('/subCategory/delete/{id}',[subcategoryController::class,'destoy'])->
 Route::get('/subCategory/edit/{id}',[subcategoryController::class,'edit'])->name('subCategory.edit');
 Route::post('/subcategory/update/{id}',[subcategoryController::class,'update'])->name('subcategory.update');
 
+
 //__Create Post__//
 Route::get('/post/create',[postController::class,'create'])->name('post.create');
 Route::post('/post/store',[postController::class,'store'])->name('post.store');
-
-
-
+Route::get('/post/index',[postController::class,'index'])->name('post.index');
+Route::get('/post/delete/{id}',[postController::class,'destoy'])->name('post.delete');
+Route::get('/post/edits/{id}',[postController::class,'edit'])->name('post.edits');
+Route::post('/post/update/{id}',[postController::class,'update'])->name('post.update');
 
 
 
